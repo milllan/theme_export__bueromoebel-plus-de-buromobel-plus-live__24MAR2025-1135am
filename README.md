@@ -89,4 +89,5 @@ While the theme code has been optimized, third-party apps remain a significant f
 
 ---
 
-*This report summarizes the key technical changes. Please refer to performance measurement tools (PageSpeed Insights, GTmetrix) for before-and-after metrics.*
+*This report summarizes the key technical changes. Please refer to performance measurement tools (PageSpeed Insights, GTmetrix, CRuX) for before-and-after metrics.*
+https://cruxvis.withgoogle.com/#/?view=cwvsummary&url=https%3A%2F%2Fbueromoebel-plus.de%2F&identifier=origin&device=DESKTOP&periodStart=0&periodEnd=-1&display=p75s
