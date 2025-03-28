@@ -1,0 +1,199 @@
+{%- render 'section-spacing-collapsing' -%}
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+{%- comment -%}
+------------------------------------------------------------------------------------------------------------------------
+CSS
+------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+<style>
+  {%- assign block_size = section.settings.block_size -%}
+
+  #shopify-section-{{ section.id }} .swiper {
+    width: 100%;
+    padding-top: 30px;
+  }
+
+  #shopify-section-{{ section.id }} .swiper-wrapper {
+    display: flex;
+  }
+
+  #shopify-section-{{ section.id }} .swiper-slide {
+    flex-shrink: 0;
+    height: 100%;
+    width: 45%;
+    
+    /* Set width of swiper-slide based on block_size */
+    width: {% if block_size == 'small' %}32vw{% elsif block_size == 'medium' %}38vw{% else %}48vw{% endif %};
+  }
+
+  @media screen and (min-width: 700px) {
+    #shopify-section-{{ section.id }} .swiper-slide {
+      width: {% if block_size == 'small' %}19%{% elsif block_size == 'medium' %}23%{% else %}33%{% endif %};
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    #shopify-section-{{ section.id }} .swiper-slide {
+      width: {% if block_size == 'small' %}15%{% elsif block_size == 'medium' %}19%{% else %}23%{% endif %};
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    #shopify-section-{{ section.id }} .swiper-slide {
+      width: {% if block_size == 'small' %}13%{% elsif block_size == 'medium' %}15%{% else %}19%{% endif %};
+    }
+  }
+</style>
+
+{%- comment -%}
+------------------------------------------------------------------------------------------------------------------------
+LIQUID
+------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<div {% render 'section-properties' %} style="padding-top: 30px">
+  <div class="section-stack">
+    {%- render 'section-header', subheading: section.settings.subheading, heading: section.settings.title, heading_color: section.settings.heading_color, heading_gradient: section.settings.heading_gradient, content: section.settings.content, link_text: section.settings.link_text, link_url: section.settings.link_url -%}
+
+    <div class="swiper">
+      <div class="swiper-wrapper image-link-blocks">
+        {%- for block in section.blocks -%}
+        <div class="swiper-slide">
+          {%- liquid
+            assign loading_strategy = nil
+            if section.index > 3 or forloop.index > 3
+              assign loading_strategy = 'lazy'
+            endif
+          -%}
+
+          <div {% render 'surface', class: 'image-link-blocks__item group rounded', background: block.settings.background, text_color: block.settings.text_color, background_fallback: 'bg-secondary' %} {{ block.shopify_attributes }}>
+            <a {% if block.settings.link_url != blank %}href="{{ block.settings.link_url }}"{% endif %} class="image-link-blocks__inner">
+              {%- if block.settings.image != blank -%}
+                <img 
+                    data-srcset="{{ block.settings.image | img_url: 'master' }}"
+                    class="image-link-blocks__image zoom-image lazyload"
+                    sizes="(max-width: 699px) 160px, 285px"
+                    alt="{{ block.settings.image.alt }}"
+                />
+              {%- else -%}
+                {{- 'image' | placeholder_svg_tag: 'image-link-blocks__image placeholder' -}}
+              {%- endif -%}
+            </a>
+          </div>
+        </div>
+        {%- endfor -%}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Swiper JS and Initialization -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var swiper = new Swiper('.swiper', {
+      slidesPerView: 'auto',       // Adjust the number of slides shown in the viewport
+      spaceBetween: 20,            // Space between slides
+      loop: true,                  // Enable infinite loop
+      autoplay: {
+        delay: 0,                  // Continuous autoplay (no delay between transitions)
+        disableOnInteraction: false, // Autoplay should continue after user interaction
+      },
+      speed: 3000
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Image link blocks swiper",
+  "class": "shopify-section--image-link-blocks",
+  "tag": "section",
+  "disabled_on": {
+    "templates": ["password"],
+    "groups": ["header", "custom.overlay"]
+  },
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Link block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "1200 x 1400px .jpg recommended"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "block_size",
+      "label": "Block size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image link blocks swiper",
+      "blocks": [
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

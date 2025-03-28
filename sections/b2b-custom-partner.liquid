@@ -1,0 +1,96 @@
+{%- render 'section-spacing-collapsing' -%}
+<div {% render 'section-properties' %}>
+  <div class="b2b-partner-section">
+    <div class="b2b-partner-wrapper">
+      <div class="prose b2b-partner-header">
+        {% if section.settings.section_image != blank %}
+          <div class="b2b-partner-image">
+            <img src="{{ section.settings.section_image | img_url: 'medium' }}" alt="Section Image" />
+          </div>
+        {% endif %}
+        {% if section.settings.section_title != blank %}
+          <div class="b2b-partner-title">
+            {{ section.settings.section_title }}
+          </div>
+        {% endif %}
+      </div>
+      {% if section.settings.section_content != blank %}
+        <div class="prose b2b-partner-richtext" style="background-color: {{ section.settings.content_bg_color }};">
+          {{ section.settings.section_content }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .b2b-partner-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .b2b-partner-header {
+    display: flex;
+    align-items: center;
+  }
+
+  .b2b-partner-image img {
+    max-width: 150px;
+    margin-right: 20px;
+  }
+
+  .b2b-partner-richtext {
+    border-radius: 30px;
+    position: relative;
+    padding: 4rem;
+    top: -3rem;
+  }
+
+  @media (max-width: 768px) {
+    .b2b-partner-section {
+      flex-direction: column;
+    }
+    .b2b-partner-richtext {
+      top: -2rem;
+      padding: 2rem;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "B2B Partner Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "section_image",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "section_title",
+      "label": "Title",
+      "default": "<h2>Leistungsstarker B2B Partner Seit 2005</h2>"
+    },
+    {
+      "type": "richtext",
+      "id": "section_content",
+      "label": "Content",
+      "default": "<ul><li>Ergonomie, die perfekt zum Unternehmen & Budget passt</li><li>Mehr kaufen, mehr sparen: attraktive Sonderkonditionen für Unternehmen</li><li>Direkt vom Hersteller aus Deutschland</li><li>B2B Komplett Büroausstattung</li></ul>"
+    },
+    {
+      "type": "color",
+      "id": "content_bg_color",
+      "label": "Content Background Color",
+      "default": "#f5f5f5"
+    }
+  ],
+  "presets": [
+    {
+      "name": "B2B Partner Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,171 @@
+<!doctype html>
+
+<html class="no-js" lang="{{ request.locale.iso_code }}" dir="{% render 'direction' %}">
+  
+  <head>{% render 'yoast-seo' %}
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, minimum-scale=1, maximum-scale=5">
+    <meta name="theme-color" content="{{ settings.header_background }}">
+
+    <!-- Handle Yoast SEO Plugin's auto-disable -->
+    {%- comment -%}Auto-disabled. Yoast plugin is taking care of SEO output.{%- endcomment -%}
+    {%- if disabled_by_yoast_seo -%}
+      <title>{% if page_title == blank %}{{ shop.name }}{% else %}{{ page_title }}{% if current_page != 1 %} &ndash; {{ 'general.page' | t: page: current_page }}{% endif %}{% endif %}</title>
+      <meta name="description" content="{{ page_description | escape }}">
+      <link rel="canonical" href="{{ canonical_url }}">
+    {%- endif -%}
+
+    <!-- Favicon and Apple Touch Icon -->
+    {%- if settings.favicon -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 96 }}">
+      <link rel="apple-touch-icon" href="{{ settings.favicon | image_url: width: 180 }}">
+    {%- endif -%}
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://cdn.shopify.com">
+    <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+
+    <!-- Preload critical fonts -->
+    {%- unless settings.heading_font.system? -%}
+      <link rel="preload" href="{{ settings.heading_font | font_url }}" as="font" type="font/woff2" crossorigin>
+    {%- endunless -%}
+    {%- unless settings.text_font.system? -%}
+      <link rel="preload" href="{{ settings.text_font | font_url }}" as="font" type="font/woff2" crossorigin>
+    {%- endunless -%}
+
+    {{- 'theme.min.css' | asset_url | stylesheet_tag: preload: true -}}
+    
+    <!-- Render meta tags and variables -->
+    {%- render 'social-meta-tags' -%}
+    {%- render 'microdata-schema' -%}
+    {%- render 'css-variables' -%}
+    {%- render 'js-variables' -%}
+    
+    <!-- Render third-party Shopify apps' scripts -->
+    {%- render 'bold-options-hybrid' -%}
+    {%- render 'bold-common' -%}
+    {% render 'sc-includes' %}
+
+    <!-- Import Map (for handling imports in modern browsers) -->
+    <script type="importmap">
+      {%- comment -%}On Safari 16.3 and lower, a polyfill is used to load importmap{%- endcomment -%}
+      {
+        "imports": {
+          "vendor": "{{ 'vendor.min.js' | asset_url }}",
+          "theme": "{{ 'theme.min.js' | asset_url }}",
+          "photoswipe": "{{ 'photoswipe.min.js' | asset_url }}"
+        }
+      }
+    </script>
+
+    <!-- Import Map Polyfill if needed -->
+    <script>
+      if (!(HTMLScriptElement.supports && HTMLScriptElement.supports('importmap'))) {
+        const importMapPolyfill = document.createElement('script');
+        importMapPolyfill.async = true;
+        importMapPolyfill.src = "{{ 'es-module-shims.min.js' | asset_url }}";
+        document.head.appendChild(importMapPolyfill);
+      }
+    </script>
+
+
+    
+    {{ content_for_header }}
+    <script type="module" src="{{ 'vendor.min.js' | asset_url }}" defer></script>
+    <script type="module" src="{{ 'theme.min.js' | asset_url }}" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
+    <meta name="msvalidate.01" content="4E597CBD59CD349DE1E51D3412E990CB" />
+    
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="SZrRvFGOBEFtNV38m9H2RA" async></script>
+    
+  </head>
+
+  <body class="{% if settings.show_page_transition %}page-transition{% endif %} {% if settings.zoom_image_on_hover %}zoom-image--enabled{% endif %}">
+
+    <!-- Render Shadow DOM Templates -->
+    {%- render 'shadow-dom-templates' -%}
+
+    <!-- Accessibility Link -->
+    <a href="#main" class="skip-to-content sr-only">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+    <!-- Main Sections -->
+    {%- if request.page_type != 'password' -%}
+      {%- sections 'header-group' -%}
+      {%- sections 'overlay-group' -%}
+
+      <!-- Popover Cart Type (if enabled) -->
+      {%- if settings.cart_type == 'popover' -%}
+        <cart-notification-drawer open-from="bottom" class="quick-buy-drawer drawer"></cart-notification-drawer>
+      {%- endif -%}
+    {%- endif -%}
+
+    <!-- Customer Account, Order, or Addresses Page Banner -->
+    {%- if request.page_type == 'customers/account' or request.page_type == 'customers/order' or request.page_type == 'customers/addresses' -%}
+      {%- section 'account-banner' -%}
+    {%- endif -%}
+
+    <!-- Main Content -->
+    <main role="main" id="main" class="anchor">
+      {{ content_for_layout }}
+
+      <!-- Footer Group -->
+      {%- if request.page_type != 'password' -%}
+        {%- sections 'footer-group' -%}
+      {%- endif -%}
+    </main>
+    
+    <!-- Bold Cart Count Custom Code -->
+    <script defer>
+      var targetNode = document.querySelector('cart-count');
+      
+      var callback = function(mutationsList, observer) {
+        for (var mutation of mutationsList) {
+          if (mutation.type === 'childList' || mutation.type === 'characterData') {
+            // NEW XHR FETCH REQUEST FOR BOLD CART COUNT
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/cart.js', true);
+            xhr.responseType = 'json';
+            xhr.onload = function() {
+              if (xhr.status >= 200 && xhr.status < 400) {
+                var cart = xhr.response;
+                if (typeof window.BOLD !== 'undefined' &&
+                    typeof window.BOLD.common !== 'undefined' &&
+                    typeof window.BOLD.common.cartDoctor !== 'undefined') {
+                  cart = window.BOLD.common.cartDoctor.fix(cart);
+                }
+                document.querySelectorAll('cart-count').forEach(function(elm) {
+                  elm.textContent = cart.item_count;
+                });
+              }
+            };
+            xhr.send();
+            // NEW XHR FETCH REQUEST FOR BOLD CART COUNT
+          }
+        }
+      };
+      
+      var observer = new MutationObserver(callback);
+      var config = { childList: true, subtree: true, characterData: true };
+      
+      if (targetNode) {
+        observer.observe(targetNode, config);
+      }
+    </script>
+    <script>
+      // Function to load the script
+      function loadRetargetingScript() {
+        var script = document.createElement('script');
+        script.src = "https://t.adcell.com/js/inlineretarget.js?method=track&pid=12361&type=startpage";
+        script.async = true;
+        document.body.appendChild(script);
+        // Remove the event listener after script is loaded
+        window.removeEventListener('scroll', loadRetargetingScript);
+      }
+    
+      // Add event listener to load script on scroll
+      window.addEventListener('scroll', loadRetargetingScript);
+    </script>
+
+  </body>
+</html>
