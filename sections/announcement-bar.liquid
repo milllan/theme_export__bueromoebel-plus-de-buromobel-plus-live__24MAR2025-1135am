@@ -83,10 +83,30 @@
       {%- endif -%}
     </div>
   </height-observer>
-
+{% comment %}
   <script defer>
     document.documentElement.style.setProperty('--announcement-bar-height', Math.round(document.getElementById('shopify-section-{{ section.id }}').clientHeight) + 'px');
   </script>
+{% endcomment %}
+{% comment %}not blocking the main thread, improving FCP and LCP times{% endcomment %}
+<script defer>
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => {
+      document.documentElement.style.setProperty(
+        '--announcement-bar-height', 
+        Math.round(document.getElementById('shopify-section-{{ section.id }}').clientHeight) + 'px'
+      );
+    });
+  } else {
+    // Fallback to setTimeout if not supported
+    setTimeout(() => {
+      document.documentElement.style.setProperty(
+        '--announcement-bar-height', 
+        Math.round(document.getElementById('shopify-section-{{ section.id }}').clientHeight) + 'px'
+      );
+    }, 0);
+  }
+</script>
 {%- endif -%}
 
 {% schema %}

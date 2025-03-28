@@ -70,13 +70,16 @@
                   {%- if block.settings.image != blank -%}
                     {%- capture sizes -%}{{ block.settings.image_width }}px{%- endcapture -%}
                     {%- capture widths -%}{{ block.settings.image_width }}, {{ block.settings.image_width | times: 2 | at_most: block.settings.image.width }}{%- endcapture -%}
-                    {%- capture style -%}max-width: {{ block.settings.image_width }}px{%- endcapture -%}
+                    {%- capture style -%}max-width: {{ block.settings.image_width }}px;min-height:25px{%- endcapture -%}
                   <img 
-                    data-srcset="{{ block.settings.image | img_url: 'master' }}"
-                    class="lazyload"
+                    srcset="{{ block.settings.image | img_url: 'master' }}"
+                    class=""
+                    loading="lazy" fetchpriority="low" decoding="async"
                     sizes="{{ sizes }}"
                     alt="{{ block.settings.image.alt }}"
                     style="{{ style }}"
+                    width="{{ block.settings.image_width }}"
+                    height="{{ block.settings.image_height }}"
                 />
                   {%- endif -%}
 

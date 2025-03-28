@@ -51,10 +51,11 @@
                   {%- if block.settings.image != blank -%}
                     {%- capture image_class -%}testimonial__image {% if block.settings.round_avatar %}rounded-full{% endif %}{%- endcapture -%}
                 <img 
-                    data-srcset="{{ block.settings.image | img_url: 'master' }}"
+                    srcset="{{ block.settings.image | img_url: 'master' }}"
                     sizes="(max-width: 699px) 40px, 56px"
-                    class="{{ image_class }} lazyload"
+                    class="{{ image_class }}"
                     alt="{{ block.settings.image.alt }}"
+                    loading="lazy" fetchpriority="low" decoding="async"
                 />
                   {%- endif -%}
 

@@ -3,7 +3,7 @@
 <html class="no-js" lang="{{ request.locale.iso_code }}" dir="{% render 'direction' %}">
   
   <head>{% render 'yoast-seo' %}
-    
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, minimum-scale=1, maximum-scale=5">
     <meta name="theme-color" content="{{ settings.header_background }}">
@@ -22,20 +22,107 @@
       <link rel="apple-touch-icon" href="{{ settings.favicon | image_url: width: 180 }}">
     {%- endif -%}
 
+{%- unless request.design_mode -%}
+    <!-- debugbear.com RUM tracking, 2025-03-24 -->
+<script>(function(){if(window.__lighthouse||navigator.webdriver)return;if(/(Chrome-Lighthouse|HeadlessChrome|Google Page Speed Insights|Linux)/i.test(navigator.userAgent))return;var b=50;if(Math.random()*100>100-b){var d="dbbRum",w=window,o=document,a=addEventListener,scr=o.createElement("script");scr.async=!0;w[d]=w[d]||[];w[d].push(["presampling",b]);["error","unhandledrejection"].forEach(function(t){a(t,function(e){w[d].push([t,e])})});scr.src="https://cdn.debugbear.com/KNzMOlyY9L92.js";o.head.appendChild(scr)}})()</script>
+{%- endunless %}
+
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://cdn.shopify.com">
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    <link rel="preconnect" href="https://static.klaviyo.com" crossorigin>
 
     <!-- Preload critical fonts -->
     {%- unless settings.heading_font.system? -%}
       <link rel="preload" href="{{ settings.heading_font | font_url }}" as="font" type="font/woff2" crossorigin>
     {%- endunless -%}
-    {%- unless settings.text_font.system? -%}
+{%- comment -%}    {%- unless settings.text_font.system? -%}
       <link rel="preload" href="{{ settings.text_font | font_url }}" as="font" type="font/woff2" crossorigin>
     {%- endunless -%}
-
+{%- endcomment -%}
     {{- 'theme.min.css' | asset_url | stylesheet_tag: preload: true -}}
-    
+{%- comment -%} Core Web Vitals / Performance, 2025-03-25{%- endcomment -%}
+    <style>
+      /*.section-blends,
+      .shopify-section--image-link-blocks,
+        .image-link-blocks__item,
+      footer {
+        contain: content;
+      }*/
+      .slideshow,  /* homepage */
+        slideshow-carousel,
+        .slideshow__slide,
+      .section-blends,
+      .shopify-section--image-link-blocks,
+        .image-link-blocks__item,
+      scroll-carousel,
+      product-list,
+      product-card,
+      .shopify-section--media-grid,
+      .testimonial,
+      .shopify-section--video,
+      .shopify-section--faq,
+      footer {
+        content-visibility: auto;
+        contain: content;
+        contain-intrinsic-size: auto 300px;
+      }
+      .image-link-blocks__item {
+          contain-intrinsic-size: auto 200px;
+      }
+      .slideshow {
+          contain-intrinsic-size: auto 640px;
+      }
+        slideshow-carousel,
+        .slideshow__slide {
+          contain-intrinsic-size: auto 560px;
+        }
+      .shopify-section--video {
+        contain-intrinsic-size: auto 400px;
+      }
+      .shopify-section--faq {
+        contain-intrinsic-size: auto 740px;
+      }
+      footer {
+        contain-intrinsic-size: auto 999px;
+      }
+      media-carousel,
+        .product-gallery__ar-wrapper,
+        .product-gallery__media
+      {
+        contain: layout;
+        contain-intrinsic-size: auto 400px;
+      }
+      navigation-drawer,
+      .header__link-list,
+      .mega-menu,
+      .slideshow__slide:not(.is-selected) {
+        content-visibility: hidden;
+      }
+      .lock navigation-drawer,
+      [open] .mega-menu {
+        content-visibility: visible;
+      }
+      @media screen and (min-width: 1150px) {
+        .lg\:hidden {
+          content-visibility: hidden;
+        }
+        .header__link-list {
+          content-visibility: visible;
+        }
+      }
+      /*.content-over-media:before {
+        transition: unset!Important;
+        transition: background .0s ease-in-out!important;
+      }*/
+{%- comment -%} Collections LCP time imporvement{%- endcomment -%}
+      image-banner,
+      .h0,  /* collections */
+      .prose > .h1 /* pages */ {
+        opacity: 1!important;
+      }
+    </style>
+
     <!-- Render meta tags and variables -->
     {%- render 'social-meta-tags' -%}
     {%- render 'microdata-schema' -%}
@@ -43,9 +130,16 @@
     {%- render 'js-variables' -%}
     
     <!-- Render third-party Shopify apps' scripts -->
+{% if template.name == 'product' or template.name == 'collection' or template.name == 'cart' or template.name == 'search' %}
     {%- render 'bold-options-hybrid' -%}
     {%- render 'bold-common' -%}
+{% endif %}
+{% if template.name == 'product' %}
+    <link rel="preconnect" href="https://options.shopapps.site" crossorigin>
     {% render 'sc-includes' %}
+{% endif %}
+
+    <link rel="prefetch" href="https://static.klaviyo.com/onsite/js/WHEJ3F/klaviyo.js?company_id=WHEJ3F" as="script">
 
     <!-- Import Map (for handling imports in modern browsers) -->
     <script type="importmap">
@@ -60,22 +154,27 @@
     </script>
 
     <!-- Import Map Polyfill if needed -->
-    <script>
-      if (!(HTMLScriptElement.supports && HTMLScriptElement.supports('importmap'))) {
-        const importMapPolyfill = document.createElement('script');
-        importMapPolyfill.async = true;
-        importMapPolyfill.src = "{{ 'es-module-shims.min.js' | asset_url }}";
-        document.head.appendChild(importMapPolyfill);
-      }
-    </script>
-
-
+<script>
+  // Wait for DOM to be ready to ensure feature detection is accurate
+  document.addEventListener('DOMContentLoaded', function() {
+    // More comprehensive feature detection
+    const supportsImportMaps = 'importMap' in HTMLScriptElement.prototype || 
+                              (HTMLScriptElement.supports && HTMLScriptElement.supports('importmap'));
     
-    {{ content_for_header }}
-    <script type="module" src="{{ 'vendor.min.js' | asset_url }}" defer></script>
-    <script type="module" src="{{ 'theme.min.js' | asset_url }}" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
-    <meta name="msvalidate.01" content="4E597CBD59CD349DE1E51D3412E990CB" />
+    if (!supportsImportMaps) {
+      const importMapPolyfill = document.createElement('script');
+      importMapPolyfill.async = true;
+      importMapPolyfill.src = "{{ 'es-module-shims.min.js' | asset_url }}";
+      document.head.appendChild(importMapPolyfill);
+    }
+  });
+</script>
+
+<!-- BEGIN custom_content_for_header -->
+{{ content_for_header }}
+<!-- END custom_content_for_header -->
+
+  <meta name="msvalidate.01" content="4E597CBD59CD349DE1E51D3412E990CB" />
     
   <script src="https://analytics.ahrefs.com/analytics.js" data-key="SZrRvFGOBEFtNV38m9H2RA" async></script>
     
@@ -167,5 +266,167 @@
       window.addEventListener('scroll', loadRetargetingScript);
     </script>
 
+    <script type="module" src="{{ 'vendor.min.js' | asset_url }}" defer></script>
+    <script type="module" src="{{ 'theme.min.js' | asset_url }}" defer></script>
+
+{%- comment -%}{% if content_for_header contains '<img' and content_for_header contains 'class="lazyload"' or content_for_header contains "class='lazyload'" %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script
+{% endif %}{%- endcomment -%}
+{%- if content_for_layout contains "lazyload" -%}
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const lazyImages = document.querySelectorAll('img.lazyload');
+      if (lazyImages.length === 0) return; // Exit if no lazy images
+  
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              loadLazysizes();
+              observer.disconnect(); // Stop ALL observations
+            }
+          });
+        },
+        { rootMargin: '400px' } // Trigger 400px before entering viewport
+      );
+  
+      // Observe ALL lazy images (but disconnect after first trigger)
+      lazyImages.forEach(img => observer.observe(img));
+  
+      function loadLazysizes() {
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+        script.async = true;
+        document.head.appendChild(script);
+      }
+    });
+  </script>
+{% endif %}
+
+{%- unless request.design_mode -%}
+<script no-wprocket>
+const shouldPrerender = 
+    /Chrome/.test(navigator.userAgent) &&
+    (navigator.hardwareConcurrency || 4) > 2 &&
+    !(navigator.connection && navigator.connection.saveData);
+if (shouldPrerender) {
+  (function () {
+      const ignores = [
+          /\/members\/?/,
+          uri => uri.includes("/my-account"),
+          uri => uri.includes("/account"),
+          uri => uri.includes("/checkout"),
+          uri => uri.includes("/cart"),
+          uri => uri.includes("/wishlist"),
+          uri => uri.includes(".png"),
+          uri => uri.includes(".jpg"),
+          uri => uri.includes("/login"),
+          uri => uri.includes("/search"),
+          uri => uri.includes("tel:"),
+          //uri => uri.hash.includes('#private'),
+          //uri => uri.searchParams.has('secret'),
+          //uri => uri.hostname !== window.location.hostname
+      ];
+  
+      function shouldIgnore(link) {
+          try {
+              const url = new URL(link.href);
+              return ignores.some(rule => {
+                  if (rule instanceof RegExp) {
+                      return rule.test(url.pathname);
+                  }
+                  return typeof rule === 'function' && rule(url.pathname);
+              });
+          } catch {
+              return true; // Ignore invalid URLs
+          }
+      }
+  
+      let scriptPrerender = document.createElement('script');
+      scriptPrerender.setAttribute('type', 'speculationrules');
+      document.head.appendChild(scriptPrerender);
+  
+      // 2. Handle dynamic content with MutationObserver
+      const observer = new IntersectionObserver((entries) => {
+          const linksToPrerender = [];
+          
+          entries.forEach(entry => {
+              if (entry.isIntersecting && !shouldIgnore(entry.target)) {
+                  linksToPrerender.push(entry.target.href);
+              }
+          });
+  
+          if (linksToPrerender.length > 0) {
+              scriptPrerender.innerHTML = JSON.stringify({
+                  "prerender": linksToPrerender.map(url => ({
+                      "source": "list",
+                      "urls": [url],
+                      "eagerness": "moderate"
+                  }))
+              });
+              //console.log(`[Prerender] Updated speculation rules with ${linksToPrerender.length} URLs`);
+          }
+      }, { rootMargin: "99px" });
+  
+      // 3. MutationObserver for dynamic content
+      const domObserver = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+              mutation.addedNodes.forEach((node) => {
+                  if (node.nodeType === Node.ELEMENT_NODE) {
+                      node.querySelectorAll('a').forEach(link => {
+                          if (!shouldIgnore(link)) {
+                              observer.observe(link);
+                          }
+                      });
+                  }
+              });
+          });
+      });
+  
+      // Initial observation
+      document.querySelectorAll('a').forEach(link => {
+          if (!shouldIgnore(link)) {
+              observer.observe(link);
+          }
+      });
+  
+      // Start watching for DOM changes
+      domObserver.observe(document.body, {
+          childList: true,
+          subtree: true
+      });
+  })();
+}
+function loadQL(){
+  //console.log('load quicklink js');
+  ['mousemove'].forEach(e => window.removeEventListener(e, loadQL));
+    window.removeEventListener('scroll', scrollHandlerQL);
+  setTimeout(function(){
+      const s = document.createElement('script');
+      s.onload = function(){
+          quicklink.listen({
+              delay: 9,
+              throttle: 2,
+              ignores: [/\/members\/?/,uri => uri.includes("/my-account"),uri => uri.includes("/account"),uri => uri.includes("/checkout"),uri => uri.includes("/cart"),uri => uri.includes("/wishlist"),uri => uri.includes(".png"),uri => uri.includes(".jpg"),uri => uri.includes("/login")]
+          });
+      };
+      s.src = '//unpkg.com/quicklink@2.3.0/dist/quicklink.umd.js';
+      document.head.appendChild(s)
+  },9)
+}
+function scrollHandlerQL() {
+    if (window.scrollY > 99) {
+      // Your function here
+      console.log('Scrolled past 99px!');
+      loadQL();
+      // Remove the event listener so it only runs once
+      window.removeEventListener('scroll', scrollHandlerQL);
+    }
+}
+['mousemove'].forEach(e => window.addEventListener(e, loadQL));
+window.addEventListener('scroll', scrollHandlerQL)
+</script>
+{%- endunless %}
   </body>
 </html>

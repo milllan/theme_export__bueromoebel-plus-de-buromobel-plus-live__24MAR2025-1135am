@@ -55,7 +55,9 @@ LIQUID
             {%- if block.settings.stretch_image -%}
               {%- capture item_content -%}
                 {%- if block.settings.image != blank -%}
-                  {{- block.settings.image | image_url: width: block.settings.image.width | image_tag: sizes: '(max-width: 699px) 160px, 285px', widths: '200,300,400,500,600,700,800,900,1000,1200', class: 'zoom-image lazyload' -}}
+                  {{- block.settings.image | image_url: width: block.settings.image.width | image_tag: sizes: '(max-width: 699px) 160px, 285px',
+                    widths: '200,300,400,500,600,700,800,900,1000,1200', class: 'zoom-image',
+                    loading: 'lazy', fetchpriority: 'low', decoding: 'async' -}}
                 {%- else -%}
                   {{- 'image' | placeholder_svg_tag: 'zoom-image placeholder' -}}
                 {%- endif -%}
@@ -77,7 +79,7 @@ LIQUID
                 {%- endif -%}
               {%- endcapture -%}
 
-              <a {% if block.settings.link_url %}href="{{ block.settings.link_url }}"{% endif %} class="content-over-media rounded" style="--content-over-media-overlay: {{ block.settings.overlay_color.rgb }} / {{ block.settings.overlay_opacity | divided_by: 100.0 }}">
+              <a {% if block.settings.link_url %}href="{{ block.settings.link_url }}"{% endif %} class="content-over-media rounded" ILB style="--content-over-media-overlay: {{ block.settings.overlay_color.rgb }} / {{ block.settings.overlay_opacity | divided_by: 100.0 }}">
                 {{- item_content -}}
               </a>
             {%- else -%}

@@ -32,9 +32,10 @@
                 {%- elsif block.settings.image != blank -%}
                   {%- capture sizes -%}(max-width: 699px) calc(73vw - 40px), (max-width: 999px) calc(38vw - 64px), calc(min({{ settings.page_width }}px, 100vw) / {{ block.settings.column_size }}){%- endcapture -%}
                 <img 
-                    data-srcset="{{ block.settings.image | img_url: 'master' }}"
+                    srcset="{{ block.settings.image | img_url: 'master' }}"
                     sizes="{{ sizes }}"
-                    class="rounded lazyload"
+                    class="rounded"
+                    loading="lazy" fetchpriority="low" decoding="async"
                     alt="{{ block.settings.image.alt }}"
                 />
                 {%- endif -%}

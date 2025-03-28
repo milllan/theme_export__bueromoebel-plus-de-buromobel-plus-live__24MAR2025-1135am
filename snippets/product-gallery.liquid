@@ -194,8 +194,9 @@ only way to do it on Shopify right now.
   <div class="w-full left-detail-desktop">
       {% if section.settings.proof_image != blank %}
                 <img 
-                    data-srcset="{{ section.settings.proof_image | img_url: 'master' }}"
-                    class="lazyload"
+                    srcset="{{ section.settings.proof_image | img_url: 'master' }}"
+                    class=""
+                    loading="lazy" fetchpriority="low" decoding="async"
                     style="margin: auto"
                     width="250"
                     height="50"

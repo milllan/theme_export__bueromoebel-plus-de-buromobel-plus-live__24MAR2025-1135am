@@ -1,5 +1,36 @@
 {% comment %} {{ 'bold-custom.js' | asset_url | stylesheet_tag }} {% endcomment %}
-{{ 'bold-options.css' | asset_url | stylesheet_tag }}
+{% comment %}{{ 'bold-options.css' | asset_url | stylesheet_tag }} {% endcomment %}
+<style>.bold_options:empty{display:none}.bold_options{min-height:200px)</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if .bold_options element exists
+  if (document.querySelector('.bold_options,.bold_option_price_display')) {
+    const cssUrl = "{{ 'bold-options.css' | asset_url }}";
+    let boCssLoaded = false;
+
+    const loadCSSbo = () => {
+      if (boCssLoaded) return;
+      boCssLoaded = true;
+      
+      // Create and append the link element
+      const l = document.createElement('link');
+      l.rel = 'stylesheet';
+      l.href = cssUrl;
+      document.head.appendChild(l);
+
+      // Clean up event listeners
+      //window.removeEventListener('scroll', loadCSSbo);
+      //window.removeEventListener('mousemove', loadCSSbo);
+    };
+
+    // Add event listeners with passive for better performance
+    //window.addEventListener('scroll', loadCSSbo, { passive: true });
+    //window.addEventListener('mousemove', loadCSSbo, { passive: true });
+    //setTimeout(loadCSSbo, 3000
+    loadCSSbo();
+  }
+});
+</script>
 <script defer src="{{ 'bold-custom.js' | asset_url }}"></script>
 
 <script defer src="https://options.shopapps.site/js/options.js"></script>

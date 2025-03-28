@@ -311,7 +311,17 @@ the underlying logic of the menu.
 {%- endif -%}
 
 <script>
-  document.documentElement.style.setProperty('--header-height', Math.round(document.getElementById('shopify-section-{{ section.id }}').clientHeight) + 'px');
+  document.addEventListener('DOMContentLoaded', () => {
+    requestAnimationFrame(() => {
+      const header = document.getElementById('shopify-section-{{ section.id }}');
+      if (header) {
+        document.documentElement.style.setProperty(
+          '--header-height',
+          Math.round(header.clientHeight) + 'px'
+        );
+      }
+    });
+  });
 </script>
 
 {% schema %}

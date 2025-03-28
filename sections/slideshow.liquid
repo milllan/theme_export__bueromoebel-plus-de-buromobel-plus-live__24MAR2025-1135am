@@ -72,12 +72,75 @@ LIQUID
               <!-- Capture loading strategy and fetch priority -->
               {% comment %} {%- capture loading_strategy -%}{% if forloop.first %}eager{% else %}lazy{% endif %}{%- endcapture -%} {% endcomment %}
               {% comment %} {%- capture fetch_priority -%}{% if forloop.first %}high{% else %}low{% endif %}{%- endcapture -%} {% endcomment %}
-            
-                <picture>
+
+                {%- if forloop.first -%}
+                  {% comment %} First image: No lazy loading {% endcomment %}
+                  {% comment %}<source media="(max-width: 650px)" srcset="{{ block.settings.mobile_image | img_url: 'master' }}">
+                  <source media="(min-width: 650px)" srcset="{{ block.settings.image | img_url: 'master' }}">
+                  <img src="{{ block.settings.image | img_url: 'master' }}" 
+                       alt="{{ block.settings.image.alt }}"
+                    decoding="async"
+                    loading="eager" 
+                    fetchpriority="high">{% endcomment %}
+{% if block.settings.image.src == block.settings.mobile_image.src %}
+                  {{ block.settings.image | image_url: width: block.settings.image.width | image_tag:
+                    widths: '1, 10, 50, 300, 352, 500, 600, 650, 700, 832, 900, 1100, 1200, 1300, 1500, 1700',
+                    loading: 'eager', fetchpriority: 'high', decoding: 'async',
+                    preload: true,
+                    alt: block.settings.image.alt,
+                    class: 'preloaded-image-mobile-and-desktop',
+                    sizes: '(max-width: 700px) calc(100vw - 40px), calc(100vw - 60px)'
+                  }}
+{% else %}
+                  {{ block.settings.image | image_url: width: block.settings.image.width | image_tag:
+                    widths: '1, 10, 50, 300, 352, 500, 600, 650, 700, 832, 900, 1100, 1200, 1300, 1500, 1700',
+                    loading: 'eager', fetchpriority: 'high', decoding: 'async',
+                    preload: true,
+                    alt: block.settings.image.alt,
+                    class: 'sm-max:hidden  preloaded-image-desktop',
+                    sizes: '(min-width: 699px) calc(100vw - 60px), 0px'
+                  }}
+                  {{ block.settings.mobile_image | image_url: width: block.settings.mobile_image.width | image_tag:
+                    widths: '1, 10, 50, 300, 352, 500, 600, 650, 700, 832, 900, 1100, 1200, 1300, 1500, 1700',
+                    loading: 'eager', fetchpriority: 'high', decoding: 'async',
+                    preload: true,
+                    decoding: async,
+                    alt: block.settings.image.alt,
+                    class: 'sm:hidden preloaded-image-mobile',
+                    sizes: '(max-width: 700px) calc(100vw - 40px), 0px'
+                  }}
+{% endif %}
+                {%- else -%}
+                {% comment %}<picture>
                   <source class="lazyload" alt="medium" data-srcset="{{ block.settings.mobile_image | img_url: 'master' }}" media="(max-width: 650px)">
                   <source class="lazyload" alt="large" data-srcset="{{ block.settings.image | img_url: 'master' }}" media="(min-width: 650px)">
                   <img class="lazyload" data-src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt }}">
-                </picture>
+                </picture>{% endcomment %}
+{% if block.settings.image.src == block.settings.mobile_image.src %}
+                  {{ block.settings.image | image_url: width: block.settings.image.width | image_tag:
+                    widths: '1, 10, 50, 300, 352, 500, 600, 650, 700, 832, 900, 1100, 1200, 1300, 1500, 1700',
+                    loading: 'lazy', fetchpriority: 'low', decoding: 'async',
+                    alt: block.settings.image.alt,
+                    class: '',
+                    sizes: '(max-width: 700px) calc(100vw - 40px), calc(100vw - 60px)'
+                  }}
+{% else %}
+                  {{ block.settings.image | image_url: width: block.settings.image.width | image_tag:
+                    widths: '1, 10, 50, 300, 352, 500, 600, 650, 700, 832, 900, 1100, 1200, 1300, 1500, 1700',
+                    loading: 'lazy', fetchpriority: 'low', decoding: 'async',
+                    alt: block.settings.image.alt,
+                    class: 'sm-max:hidden desktop',
+                    sizes: '(min-width: 699px) calc(100vw - 60px), 0px'
+                  }}
+                  {{ block.settings.mobile_image | image_url: width: block.settings.mobile_image.width | image_tag:
+                    widths: '1, 10, 50, 300, 352, 500, 600, 650, 700, 832, 900, 1100, 1200, 1300, 1500, 1700',
+                    loading: 'lazy', fetchpriority: 'low', decoding: 'async',
+                    alt: block.settings.image.alt,
+                    class: 'sm:hidden mobile',
+                    sizes: '(max-width: 700px) calc(100vw - 40px), 0px'
+                  }}
+{% endif %}
+                {%- endif -%}
               
             {%- else -%}
               <!-- Fallback placeholder image if block.settings.image is not available -->

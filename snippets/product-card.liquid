@@ -80,12 +80,16 @@ Supported variables
           {%- endif -%}
         {%- endcapture -%}
 
-        {%- capture main_image_classes -%}product-card__image product-card__image--primary lazyload {% if settings.product_image_aspect_ratio contains 'crop' %}object-fill-safe{% endif %} aspect-{{ settings.product_image_aspect_ratio | split: '_' | first }}{%- endcapture -%}
-        {{- product.featured_media | image_url: width: product.featured_media.width | image_tag: sizes: sizes, widths: '200,300,400,500,600,700,800,1000,1200,1400,1600,1800', class: main_image_classes -}}
+        {%- capture main_image_classes -%}product-card__image product-card__image--primary {% if settings.product_image_aspect_ratio contains 'crop' %}object-fill-safe{% endif %} aspect-{{ settings.product_image_aspect_ratio | split: '_' | first }}{%- endcapture -%}
+        {{- product.featured_media | image_url: width: product.featured_media.width |
+          image_tag: sizes: sizes, widths: '200,300,400,500,550,600,700,800,1000,1200,1400,1600,1800', class: main_image_classes,
+          loading: 'lazy', decoding: 'async' -}}
 
         {%- if show_secondary_image and product.media.size > 1 -%}
           {%- assign next_media = product.media[product.featured_media.position] | default: product.media[1] -%}
-          {{- next_media | image_url: width: next_media.width | image_tag: class: 'product-card__image product-card__image--secondary object-fill lazyload', fetchpriority: 'low', sizes: sizes, widths: '200,300,400,500,600,700,800,1000,1200,1400,1600,1800' -}}
+          {{- next_media | image_url: width: next_media.width |
+            image_tag: class: 'product-card__image product-card__image--secondary object-fill',
+            fetchpriority: 'low', loading: 'lazy', decoding: 'async', sizes: sizes, widths: '200,300,400,500,550,600,700,800,1000,1200,1400,1600,1800' -}}
         {%- endif -%}
       </a>
 

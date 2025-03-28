@@ -1,1 +1,128 @@
-{"type":"footer","name":"Footer group","sections":{"rich_text_fCVLtY":{"type":"rich-text","blocks":{"heading_NQPW9w":{"type":"heading","settings":{"text":"+ 50.000 Privatpersonen,  Geschäftskunden & Institutionen setzen auf Büromöbel Plus!","heading_tag":"h4","text_color":"","gradient":""}},"subheading_pHmfyn":{"type":"subheading","settings":{"text":"Überzeugen auch Sie sich von unserer Büromöbel Qualität made in Germany, wie bereits mehr als 50.000 Geschäftskunden, Privatpersonen, Institutionen & Organisationen, wie:"}},"image_YgX6r6":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/bueromoebel-plus-buerostuehle-tische-made-in-germany.png","width_mode":"full_width","max_width":1000,"mobile_max_width":400}}},"block_order":["heading_NQPW9w","subheading_pHmfyn","image_YgX6r6"],"settings":{"full_width":true,"content_width":"large","text_position":"center","background":"","background_gradient":"","text_color":""}},"custom_html_BGNpMH":{"type":"custom-html","settings":{"full_width":true,"remove_vertical_spacing":false,"remove_horizontal_spacing":false,"html":"<!-- ProvenExpert Bewertungssiegel -->\n<div id=\"pewl\"><\/div>\n<link href=\"https:\/\/www.provenexpert.com\/css\/widget_landing.css\" rel=\"preload\" as=\"style\" onload=\"this.onload=null;this.rel='stylesheet'\"><noscript><link rel=\"stylesheet\" href=\"https:\/\/www.provenexpert.com\/css\/widget_landing.css\"><\/noscript><script type=\"text\/javascript\" src=\"https:\/\/www.provenexpert.com\/widget\/landing_bueromoebel-plus.js?feedback=1&amp;avatar=1&amp;competence=1&amp;style=white\" async=\"\"><\/script>\n<!-- ProvenExpert Bewertungssiegel Ende -->","background":"","background_gradient":"","text_color":""}},"footer":{"type":"footer","blocks":{"newsletter":{"type":"newsletter","settings":{"image":"shopify:\/\/shop_images\/bueromoebel_plus_buerostuhl_hocker_hoehenverstellbarer_schreibtisch_kaufen_made_in_germany.svg","image_width":240,"heading_size":"h3","title":"Kostenlos & einfach 50 € Gutscheincode sichern!","content":"<p>Jetzt E-Mail eintragen, Newsletter abonnieren und 50 € sparen!<br\/>Hinweis: <em>Der Newsletter ist 100 % KOSTENLOS & kann jederzeit wieder abbestellt werden.<\/em><\/p>","undercontent":"<p>Marken - & Produktausschluss vorbehalten. Erst ab Bestellungen in Höhe von 1.000 €<\/p>"}},"links_6K8eEr":{"type":"links","settings":{"menu":"oft-geklickt","show_menu_title":true,"menu_title":"Oft geklickt"}},"links_NgnRbP":{"type":"links","settings":{"menu":"ihre-vorteile","show_menu_title":true,"menu_title":"Ihre Vorteile"}},"links_UQnH6n":{"type":"links","settings":{"menu":"haben-sie-fragen","show_menu_title":true,"menu_title":""}}},"block_order":["newsletter","links_6K8eEr","links_NgnRbP","links_UQnH6n"],"settings":{"show_social_media":true,"show_payment_icons":true,"show_country_selector":true,"show_country_flag":true,"show_country_name":true,"show_locale_selector":true}}},"order":["rich_text_fCVLtY","custom_html_BGNpMH","footer"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "rich_text_fCVLtY": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_NQPW9w": {
+          "type": "heading",
+          "settings": {
+            "text": "+ 50.000 Privatpersonen,  Geschäftskunden & Institutionen setzen auf Büromöbel Plus!",
+            "heading_tag": "h4",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "subheading_pHmfyn": {
+          "type": "subheading",
+          "settings": {
+            "text": "Überzeugen auch Sie sich von unserer Büromöbel Qualität made in Germany, wie bereits mehr als 50.000 Geschäftskunden, Privatpersonen, Institutionen & Organisationen, wie:"
+          }
+        },
+        "image_YgX6r6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/bueromoebel-plus-buerostuehle-tische-made-in-germany.png",
+            "width_mode": "full_width",
+            "max_width": 1000,
+            "mobile_max_width": 400
+          }
+        }
+      },
+      "block_order": [
+        "heading_NQPW9w",
+        "subheading_pHmfyn",
+        "image_YgX6r6"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_width": "large",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+"custom_html_BGNpMH": {
+  "type": "custom-html",
+  "settings": {
+    "full_width": true,
+    "remove_vertical_spacing": false,
+    "remove_horizontal_spacing": false,
+    "html": "<!-- ProvenExpert Bewertungssiegel -->\n<div id='pewl' style='min-height:197px'></div>\n<script>document.addEventListener('DOMContentLoaded',function(){var e=document.getElementById('pewl');if(e){var n=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){var t=document.createElement('link');t.rel='stylesheet',t.href=\"//www.provenexpert.com/css/widget_landing.css\",document.head.appendChild(t);var a=document.createElement('script');a.src=\"//www.provenexpert.com/widget/landing_bueromoebel-plus.js?feedback=1&amp;avatar=1&amp;competence=1&amp;style=white\",a.async=!0,document.body.appendChild(a),n.disconnect()} })},{rootMargin:'600px'});n.observe(e)} });</script>\n<noscript><link rel=\"stylesheet\" href=\"https://www.provenexpert.com/css/widget_landing.css\"></noscript>\n\n<!-- ProvenExpert Bewertungssiegel Ende -->",
+    "background": "",
+    "background_gradient": "",
+    "text_color": ""
+  }
+},
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "image": "shopify://shop_images/bueromoebel_plus_buerostuhl_hocker_hoehenverstellbarer_schreibtisch_kaufen_made_in_germany.svg",
+            "image_width": 240,
+            "heading_size": "h3",
+            "title": "Kostenlos & einfach 50 € Gutscheincode sichern!",
+            "content": "<p>Jetzt E-Mail eintragen, Newsletter abonnieren und 50 € sparen!<br/>Hinweis: <em>Der Newsletter ist 100 % KOSTENLOS & kann jederzeit wieder abbestellt werden.</em></p>",
+            "undercontent": "<p>Marken - & Produktausschluss vorbehalten. Erst ab Bestellungen in Höhe von 1.000 €</p>"
+          }
+        },
+        "links_6K8eEr": {
+          "type": "links",
+          "settings": {
+            "menu": "oft-geklickt",
+            "show_menu_title": true,
+            "menu_title": "Oft geklickt"
+          }
+        },
+        "links_NgnRbP": {
+          "type": "links",
+          "settings": {
+            "menu": "ihre-vorteile",
+            "show_menu_title": true,
+            "menu_title": "Ihre Vorteile"
+          }
+        },
+        "links_UQnH6n": {
+          "type": "links",
+          "settings": {
+            "menu": "haben-sie-fragen",
+            "show_menu_title": true,
+            "menu_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "newsletter",
+        "links_6K8eEr",
+        "links_NgnRbP",
+        "links_UQnH6n"
+      ],
+      "settings": {
+        "show_social_media": true,
+        "show_payment_icons": true,
+        "show_country_selector": true,
+        "show_country_flag": true,
+        "show_country_name": true,
+        "show_locale_selector": true
+      }
+    }
+  },
+  "order": [
+    "rich_text_fCVLtY",
+    "custom_html_BGNpMH",
+    "footer"
+  ]
+}

@@ -38,8 +38,9 @@ You can learn more about this (and learn how to cleanly revert these changes) at
               {%- capture widths -%}{{ section.settings.team_avatar_width }}, {{ section.settings.team_avatar_width | times: 2 | at_most: section.settings.team_avatar.width }}{%- endcapture -%}
               {%- capture style -%}max-width: {{ section.settings.team_avatar_width }}px{%- endcapture -%}
                 <img 
-                    data-srcset="{{ section.settings.team_avatar | img_url: 'master' }}"
-                    class="lazyload"
+                    srcset="{{ section.settings.team_avatar | img_url: 'master' }}"
+                    class=""
+                    loading="lazy" fetchpriority="low" decoding="async"
                     sizes="{{ sizes }}"
                     alt="{{ section.settings.team_avatar.alt }}"
                     style="{{ style }}"

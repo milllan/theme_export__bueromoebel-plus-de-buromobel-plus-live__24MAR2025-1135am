@@ -1,1 +1,599 @@
-{"sections":{"17229604623a973d0d":{"type":"apps","blocks":{"breadcrumbs_by_byte_apps_breadcrumb_Yj9BD8":{"type":"shopify:\/\/apps\/breadcrumbs-by-byte-apps\/blocks\/breadcrumb\/8742b2ff-9d31-4c00-b469-b4aa165999d7","settings":{"menu":"main-menu","icon":"none","first_item_text":"Home","icon-text":5,"paddingtop":10,"paddingbottom":10,"paddingleft":0,"paddingright":10,"font_size":12,"paddingtopmobile":10,"paddingbottommobile":10,"paddingleftmobile":0,"paddingrightmobile":10,"font_size_mobile":12,"gap":0,"margin_left_symbol":5,"text_color":"#000000","align":"left","symbol":"third","text_transform":"capitalize"}}},"block_order":["breadcrumbs_by_byte_apps_breadcrumb_Yj9BD8"],"settings":{"full_width":true,"remove_vertical_spacing":true,"remove_horizontal_spacing":false,"background":"","background_gradient":"","text_color":""}},"main":{"type":"main-product","blocks":{"vendor":{"type":"vendor","settings":{}},"title":{"type":"title","settings":{"heading_tag":"h4"}},"judge_me_reviews_preview_badge_XkNN6Y":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","settings":{}},"badges":{"type":"badges","settings":{}},"price":{"type":"price","settings":{"show_taxes_notice":true,"trust_badge":"shopify:\/\/shop_images\/bueromoebel_kaufen_buerostuehle_made_in_germany.png","trust_link":"shopify:\/\/pages\/bestpreisgarantie"}},"payment_terms":{"type":"payment_terms","settings":{}},"variant_picker":{"type":"variant_picker","settings":{"hide_sold_out_variants":false,"stack_blocks":true,"selector_style":"block","swatch_selector_style":"swatch","variant_image_options":"Farbe, Farbe Dekor, Farbe Netzrücken","size_chart_page":""}},"quantity_selector":{"type":"quantity_selector","settings":{}},"buy_buttons":{"type":"buy_buttons","settings":{"shipping_text":"{{ product.metafields.custom.shipping.value }}","text_color":"#00a341","inventory_text":"<p>Nur noch <span>{{ product.selected_or_first_available_variant.inventory_quantity }}<\/span> Stück verfügbar<\/p>","show_payment_button":false,"show_gift_card_recipient":true,"atc_button_background":"#ff5c38","atc_button_text_color":"","payment_button_background":"","payment_button_text_color":""}},"right_detail_DQthmq":{"type":"right_detail","settings":{"show_payment_icons":true,"text":"<p><strong>Sichere Bezahlung & einfacher Bestellprozess!<\/strong><\/p><p>Für <strong>Geschäftskunden<\/strong> bieten wir den <strong>Kauf auf Rechnung<\/strong>,  sowie die Erstellung von <strong>Angeboten<\/strong> mit Vorteilspreisen an. <\/p><p>Schreiben Sie uns dazu eine <a href=\"\/pages\/contact\" title=\"Kontakt\">Nachricht<\/a> oder rufen Sie uns an, unter: <a href=\"tel:036543039684\" title=\"tel:036543039684\">0365 4303 9684<\/a><\/p>","alignment":"center"}},"collapsible_text_miXQ7U":{"type":"collapsible_text","settings":{"title":"Details & Anleitung","content":"{{ product.metafields.custom.details_instructions | metafield_tag }}","page":""}},"collapsible_text_kL4mW4":{"type":"collapsible_text","settings":{"title":"Versand & Rückgaberecht","content":"{{ product.metafields.custom.shipping_returns | metafield_tag }}","page":""}},"collapsible_text_8KxnhT":{"type":"collapsible_text","settings":{"title":"Garantie","content":"{{ product.metafields.custom.guarantee | metafield_tag }}","page":""}},"collapsible_text_NNgntq":{"type":"collapsible_text","settings":{"title":"Mengenrabatt","content":"{{ product.metafields.custom.volume_discount | metafield_tag }}","page":""}}},"block_order":["vendor","title","judge_me_reviews_preview_badge_XkNN6Y","badges","price","payment_terms","variant_picker","quantity_selector","buy_buttons","right_detail_DQthmq","collapsible_text_miXQ7U","collapsible_text_kL4mW4","collapsible_text_8KxnhT","collapsible_text_NNgntq"],"settings":{"full_width":false,"show_fixed_add_to_cart":true,"proof_image":"shopify:\/\/shop_images\/bueromoebel_plus_erfahrung_kunden_bueroeinrichtung_buerohocker_rollcontainer_buerostuehle_kaufen_made_in_germany_auf_rechnung_hoehenverstellbare_schreibtische.svg","proof_text":"<h5>Überzeugen auch Sie sich, wie mehr als 50.000 zufriedene Kunden!<\/h5><p>\"Mit Büromöbel Plus erhalte ich stets eine Qualität, mit der mein Team & ich sehr glücklich sowie zufrieden sind. Auch die Lieferung geht sehr zügig & das Team der Firma ist bei Rückfragen am Telefon äußerst kompetent und freundlich.” – A. Wohlfeil, Geschäftsführer & Kunde von Büromöbel Plus.<\/p>","proof_alignment":"center","desktop_media_width":50,"desktop_media_layout":"carousel_thumbnails_bottom","mobile_media_size":"expanded","mobile_carousel_control":"thumbnails","enable_video_autoplay":true,"enable_video_looping":true,"enable_image_zoom":true,"max_image_zoom_level":3,"background":"#ffffff","background_gradient":"","text_color":"","input_background":"rgba(0,0,0,0)","input_text_color":""}},"text_with_icons_tpxtBj":{"type":"text-with-icons","blocks":{"item_Pn9g8R":{"type":"item","settings":{"icon":"picto-coupon","custom_icon":"shopify:\/\/shop_images\/1.svg","mobile_icon_width":32,"icon_width":40,"icon_background_type":"circle","icon_background":"","icon_color":"","title":"Kostenlose Lieferung Deutschlandweit 🇩🇪","content":""}},"item_tPHgPC":{"type":"item","settings":{"icon":"picto-coupon","custom_icon":"shopify:\/\/shop_images\/2.svg","mobile_icon_width":32,"icon_width":32,"icon_background_type":"circle","icon_background":"","icon_color":"","title":"60 Tage Geld zurück Garantie","content":""}},"item_KhQGp8":{"type":"item","settings":{"icon":"picto-coupon","custom_icon":"shopify:\/\/shop_images\/3.svg","mobile_icon_width":32,"icon_width":40,"icon_background_type":"circle","icon_background":"","icon_color":"","title":"Ein großer Teil unserer Produkte sind 100% in Deutschland hergestellt","content":""}},"item_Kjqnb8":{"type":"item","settings":{"icon":"picto-coupon","custom_icon":"shopify:\/\/shop_images\/4.svg","mobile_icon_width":32,"icon_width":40,"icon_background_type":"circle","icon_background":"","icon_color":"","title":"Inklusive Bestpreisgarantie","content":""}},"item_yEj9Je":{"type":"item","settings":{"icon":"picto-coupon","custom_icon":"shopify:\/\/shop_images\/5.svg","mobile_icon_width":32,"icon_width":40,"icon_background_type":"circle","icon_background":"","icon_color":"","title":"Persönlicher Ansprechpartner","content":""}}},"block_order":["item_Pn9g8R","item_tPHgPC","item_KhQGp8","item_Kjqnb8","item_yEj9Je"],"settings":{"full_width":true,"stack_on_mobile":false,"title":"","heading_tag":"h5","text_alignment":"center","icon_spacing":"small","background":"","background_gradient":"","text_color":""}},"feature_chart_custom_3kW4Qw":{"type":"feature-chart-custom","blocks":{"headings_jYmFRi":{"type":"headings","settings":{"heading_1":"{{ product.metafields.custom.heading_1.value }}","heading_2":"{{ product.metafields.custom.heading_2.value }}","heading_3":"{{ product.metafields.custom.heading_3.value }}","heading_4":"{{ product.metafields.custom.heading_4.value }}","heading_5":"{{ product.metafields.custom.heading_5.value }}","heading_6":"","heading_7":"","heading_8":"","heading_9":"","heading_10":"","heading_11":"","heading_12":"","heading_13":"","heading_14":"","heading_15":"","heading_16":"","heading_17":"","heading_18":"","heading_19":"","heading_20":""}},"values_9hHLEK":{"type":"values","settings":{"product":"{{ product }}","value_1":"<p>{{ block.settings.product.metafields.custom.column_1.value }}<\/p>","value_2":"<p>{{ block.settings.product.metafields.custom.column_2.value }}<\/p>","value_3":"<p>{{ block.settings.product.metafields.custom.column_3.value }}<\/p>","value_4":"<p>{{ block.settings.product.metafields.custom.column_4.value }}<\/p>","value_5":"<p>{{ block.settings.product.metafields.custom.column_5.value }}<\/p>","value_6":"","value_7":"","value_8":"","value_9":"","value_10":"","value_11":"","value_12":"","value_13":"","value_14":"","value_15":"","value_16":"","value_17":"","value_18":"","value_19":"","value_20":"","view_button_background":"","view_button_text_color":""}}},"block_order":["headings_jYmFRi","values_9hHLEK"],"settings":{"full_width":true,"subheading":"{{ product.title }}","title":"","content":"<p>{{ product.metafields.woo.short_description_plain | metafield_tag }}<\/p>","button_text":"","button_url":"","text_position":"start","max_rows":5,"view_all_text":"View all","view_less_text":"View less","view_product":"View","viewing_product":"","show_product_swatch":true,"background":"","background_gradient":"","text_color":"","heading_color":"","heading_gradient":"","button_background":"","button_text_color":"","chart_background":"","chart_text_color":"","chart_true_false_color":""}},"media_with_text_h6UN6K":{"type":"media-with-text","blocks":{"image_7dwahk":{"type":"image","settings":{"image":"{{ product.metafields.custom.image_1.value }}","media_width":50,"media_position":"end","text_position":"place-self-center-start text-start","icon":"none","icon_width":48,"subheading":"","title":"","content":"{{ product.metafields.custom.description_1 | metafield_tag }}","link_text":"","link_url":"","background":"rgba(0,0,0,0)","background_gradient":"","text_color":"#1a1a1a","text_gradient":"","button_background":"","button_text_color":""}}},"block_order":["image_7dwahk"],"settings":{"full_width":false,"spacing":"medium"}},"media_with_text_3Uazxb":{"type":"media-with-text","blocks":{"image_mJHne8":{"type":"image","settings":{"image":"{{ product.metafields.custom.image_2.value }}","media_width":50,"media_position":"start","text_position":"place-self-center-start text-start","icon":"none","icon_width":48,"subheading":"","title":"","content":"{{ product.metafields.custom.description_2 | metafield_tag }}","link_text":"","link_url":"","background":"rgba(0,0,0,0)","background_gradient":"","text_color":"#1a1a1a","text_gradient":"","button_background":"","button_text_color":""}}},"block_order":["image_mJHne8"],"settings":{"full_width":false,"spacing":"medium"}},"media_with_text_LaQp6n":{"type":"media-with-text","blocks":{"image_JpR6bH":{"type":"image","settings":{"image":"{{ product.metafields.custom.image_3.value }}","media_width":50,"media_position":"end","text_position":"place-self-center-start text-start","icon":"none","icon_width":48,"subheading":"","title":"","content":"{{ product.metafields.custom.description_3 | metafield_tag }}","link_text":"","link_url":"","background":"rgba(0,0,0,0)","background_gradient":"","text_color":"#1a1a1a","text_gradient":"","button_background":"","button_text_color":""}}},"block_order":["image_JpR6bH"],"settings":{"full_width":false,"spacing":"medium"}},"media_with_text_bRwz44":{"type":"media-with-text","blocks":{"image_znBpX4":{"type":"image","settings":{"image":"{{ product.metafields.custom.image_4.value }}","media_width":50,"media_position":"start","text_position":"place-self-center-start text-start","icon":"none","icon_width":48,"subheading":"","title":"","content":"{{ product.metafields.custom.description_4 | metafield_tag }}","link_text":"","link_url":"","background":"rgba(0,0,0,0)","background_gradient":"","text_color":"#1a1a1a","text_gradient":"","button_background":"","button_text_color":""}}},"block_order":["image_znBpX4"],"settings":{"full_width":false,"spacing":"medium"}},"media_with_text_4aHzpJ":{"type":"media-with-text","blocks":{"image_YNcm8x":{"type":"image","settings":{"image":"{{ product.metafields.custom.image_5.value }}","media_width":50,"media_position":"end","text_position":"place-self-center-start text-start","icon":"none","icon_width":48,"subheading":"","title":"","content":"{{ product.metafields.custom.description_5 | metafield_tag }}","link_text":"","link_url":"","background":"rgba(0,0,0,0)","background_gradient":"","text_color":"#1a1a1a","text_gradient":"","button_background":"","button_text_color":""}}},"block_order":["image_YNcm8x"],"settings":{"full_width":false,"spacing":"medium"}},"1722936302c482a864":{"type":"apps","blocks":{"judge_me_reviews_review_widget_nTtrkk":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","settings":{}}},"block_order":["judge_me_reviews_review_widget_nTtrkk"],"settings":{"full_width":true,"remove_vertical_spacing":false,"remove_horizontal_spacing":false,"background":"","background_gradient":"","text_color":""}},"related-products":{"type":"related-products","settings":{"recommendations_count":8,"products":[],"full_width":true,"stack_products":false,"show_progress_bar":false,"products_per_row_mobile":"1","products_per_row_desktop":4,"subheading":"","title":"Vielleich mögen Sie auch:","content":"","background":"","background_gradient":"","text_color":"","heading_color":"","heading_gradient":"","product_card_background":"","product_card_text_color":""}}},"order":["17229604623a973d0d","main","text_with_icons_tpxtBj","feature_chart_custom_3kW4Qw","media_with_text_h6UN6K","media_with_text_3Uazxb","media_with_text_LaQp6n","media_with_text_bRwz44","media_with_text_4aHzpJ","1722936302c482a864","related-products"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "17229604623a973d0d": {
+      "type": "apps",
+      "blocks": {
+        "breadcrumbs_by_byte_apps_breadcrumb_Yj9BD8": {
+          "type": "shopify://apps/breadcrumbs-by-byte-apps/blocks/breadcrumb/8742b2ff-9d31-4c00-b469-b4aa165999d7",
+          "settings": {
+            "menu": "main-menu",
+            "icon": "none",
+            "first_item_text": "Home",
+            "icon-text": 5,
+            "paddingtop": 10,
+            "paddingbottom": 10,
+            "paddingleft": 0,
+            "paddingright": 10,
+            "font_size": 12,
+            "paddingtopmobile": 10,
+            "paddingbottommobile": 10,
+            "paddingleftmobile": 0,
+            "paddingrightmobile": 10,
+            "font_size_mobile": 12,
+            "gap": 0,
+            "margin_left_symbol": 5,
+            "text_color": "#000000",
+            "align": "left",
+            "symbol": "third",
+            "text_transform": "capitalize"
+          }
+        }
+      },
+      "block_order": [
+        "breadcrumbs_by_byte_apps_breadcrumb_Yj9BD8"
+      ],
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": true,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "vendor",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h4"
+          }
+        },
+        "judge_me_reviews_preview_badge_XkNN6Y": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "badges": {
+          "type": "badges",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": true,
+            "trust_badge": "shopify://shop_images/bueromoebel_kaufen_buerostuehle_made_in_germany.png",
+            "trust_link": "shopify://pages/bestpreisgarantie"
+          }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "Farbe, Farbe Dekor, Farbe Netzrücken",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "shipping_text": "{{ product.metafields.custom.shipping.value }}",
+            "text_color": "#00a341",
+            "inventory_text": "<p>Nur noch <span>{{ product.selected_or_first_available_variant.inventory_quantity }}</span> Stück verfügbar</p>",
+            "show_payment_button": false,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "#ff5c38",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "right_detail_DQthmq": {
+          "type": "right_detail",
+          "settings": {
+            "show_payment_icons": true,
+            "text": "<p><strong>Sichere Bezahlung & einfacher Bestellprozess!</strong></p><p>Für <strong>Geschäftskunden</strong> bieten wir den <strong>Kauf auf Rechnung</strong>,  sowie die Erstellung von <strong>Angeboten</strong> mit Vorteilspreisen an. </p><p>Schreiben Sie uns dazu eine <a href=\"/pages/contact\" title=\"Kontakt\">Nachricht</a> oder rufen Sie uns an, unter: <a href=\"tel:036543039684\" title=\"tel:036543039684\">0365 4303 9684</a></p>",
+            "alignment": "center"
+          }
+        },
+        "collapsible_text_miXQ7U": {
+          "type": "collapsible_text",
+          "settings": {
+            "title": "Details & Anleitung",
+            "content": "{{ product.metafields.custom.details_instructions | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_text_kL4mW4": {
+          "type": "collapsible_text",
+          "settings": {
+            "title": "Versand & Rückgaberecht",
+            "content": "{{ product.metafields.custom.shipping_returns | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_text_8KxnhT": {
+          "type": "collapsible_text",
+          "settings": {
+            "title": "Garantie",
+            "content": "{{ product.metafields.custom.guarantee | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_text_NNgntq": {
+          "type": "collapsible_text",
+          "settings": {
+            "title": "Mengenrabatt",
+            "content": "{{ product.metafields.custom.volume_discount | metafield_tag }}",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "judge_me_reviews_preview_badge_XkNN6Y",
+        "badges",
+        "price",
+        "payment_terms",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "right_detail_DQthmq",
+        "collapsible_text_miXQ7U",
+        "collapsible_text_kL4mW4",
+        "collapsible_text_8KxnhT",
+        "collapsible_text_NNgntq"
+      ],
+      "settings": {
+        "full_width": false,
+        "show_fixed_add_to_cart": true,
+        "proof_image": "shopify://shop_images/bueromoebel_plus_erfahrung_kunden_bueroeinrichtung_buerohocker_rollcontainer_buerostuehle_kaufen_made_in_germany_auf_rechnung_hoehenverstellbare_schreibtische.jpg",
+        "proof_text": "<h5>Überzeugen auch Sie sich, wie mehr als 50.000 zufriedene Kunden!</h5><p>\"Mit Büromöbel Plus erhalte ich stets eine Qualität, mit der mein Team & ich sehr glücklich sowie zufrieden sind. Auch die Lieferung geht sehr zügig & das Team der Firma ist bei Rückfragen am Telefon äußerst kompetent und freundlich.” – A. Wohlfeil, Geschäftsführer & Kunde von Büromöbel Plus.</p>",
+        "proof_alignment": "center",
+        "desktop_media_width": 50,
+        "desktop_media_layout": "carousel_thumbnails_bottom",
+        "mobile_media_size": "expanded",
+        "mobile_carousel_control": "thumbnails",
+        "enable_video_autoplay": true,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3,
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
+      }
+    },
+    "text_with_icons_tpxtBj": {
+      "type": "text-with-icons",
+      "blocks": {
+        "item_Pn9g8R": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/1.svg",
+            "mobile_icon_width": 32,
+            "icon_width": 40,
+            "icon_background_type": "circle",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Kostenlose Lieferung Deutschlandweit 🇩🇪",
+            "content": ""
+          }
+        },
+        "item_tPHgPC": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/2.svg",
+            "mobile_icon_width": 32,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "60 Tage Geld zurück Garantie",
+            "content": ""
+          }
+        },
+        "item_KhQGp8": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/3.svg",
+            "mobile_icon_width": 32,
+            "icon_width": 40,
+            "icon_background_type": "circle",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Ein großer Teil unserer Produkte sind 100% in Deutschland hergestellt",
+            "content": ""
+          }
+        },
+        "item_Kjqnb8": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/4.svg",
+            "mobile_icon_width": 32,
+            "icon_width": 40,
+            "icon_background_type": "circle",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Inklusive Bestpreisgarantie",
+            "content": ""
+          }
+        },
+        "item_yEj9Je": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/5.svg",
+            "mobile_icon_width": 32,
+            "icon_width": 40,
+            "icon_background_type": "circle",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Persönlicher Ansprechpartner",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_Pn9g8R",
+        "item_tPHgPC",
+        "item_KhQGp8",
+        "item_Kjqnb8",
+        "item_yEj9Je"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "title": "",
+        "heading_tag": "h5",
+        "text_alignment": "center",
+        "icon_spacing": "small",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "feature_chart_custom_3kW4Qw": {
+      "type": "feature-chart-custom",
+      "blocks": {
+        "headings_jYmFRi": {
+          "type": "headings",
+          "settings": {
+            "heading_1": "{{ product.metafields.custom.heading_1.value }}",
+            "heading_2": "{{ product.metafields.custom.heading_2.value }}",
+            "heading_3": "{{ product.metafields.custom.heading_3.value }}",
+            "heading_4": "{{ product.metafields.custom.heading_4.value }}",
+            "heading_5": "{{ product.metafields.custom.heading_5.value }}",
+            "heading_6": "",
+            "heading_7": "",
+            "heading_8": "",
+            "heading_9": "",
+            "heading_10": "",
+            "heading_11": "",
+            "heading_12": "",
+            "heading_13": "",
+            "heading_14": "",
+            "heading_15": "",
+            "heading_16": "",
+            "heading_17": "",
+            "heading_18": "",
+            "heading_19": "",
+            "heading_20": ""
+          }
+        },
+        "values_9hHLEK": {
+          "type": "values",
+          "settings": {
+            "product": "{{ product }}",
+            "value_1": "<p>{{ block.settings.product.metafields.custom.column_1.value }}</p>",
+            "value_2": "<p>{{ block.settings.product.metafields.custom.column_2.value }}</p>",
+            "value_3": "<p>{{ block.settings.product.metafields.custom.column_3.value }}</p>",
+            "value_4": "<p>{{ block.settings.product.metafields.custom.column_4.value }}</p>",
+            "value_5": "<p>{{ block.settings.product.metafields.custom.column_5.value }}</p>",
+            "value_6": "",
+            "value_7": "",
+            "value_8": "",
+            "value_9": "",
+            "value_10": "",
+            "value_11": "",
+            "value_12": "",
+            "value_13": "",
+            "value_14": "",
+            "value_15": "",
+            "value_16": "",
+            "value_17": "",
+            "value_18": "",
+            "value_19": "",
+            "value_20": "",
+            "view_button_background": "",
+            "view_button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "headings_jYmFRi",
+        "values_9hHLEK"
+      ],
+      "settings": {
+        "full_width": true,
+        "subheading": "{{ product.title }}",
+        "title": "",
+        "content": "<p>{{ product.metafields.woo.short_description_plain | metafield_tag }}</p>",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "start",
+        "max_rows": 5,
+        "view_all_text": "View all",
+        "view_less_text": "View less",
+        "view_product": "View",
+        "viewing_product": "",
+        "show_product_swatch": true,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "chart_background": "",
+        "chart_text_color": "",
+        "chart_true_false_color": ""
+      }
+    },
+    "media_with_text_h6UN6K": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_7dwahk": {
+          "type": "image",
+          "settings": {
+            "image": "{{ product.metafields.custom.image_1.value }}",
+            "media_width": 50,
+            "media_position": "end",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "",
+            "title": "",
+            "content": "{{ product.metafields.custom.description_1 | metafield_tag }}",
+            "link_text": "",
+            "link_url": "",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#1a1a1a",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_7dwahk"
+      ],
+      "settings": {
+        "full_width": false,
+        "spacing": "medium"
+      }
+    },
+    "media_with_text_3Uazxb": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_mJHne8": {
+          "type": "image",
+          "settings": {
+            "image": "{{ product.metafields.custom.image_2.value }}",
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "",
+            "title": "",
+            "content": "{{ product.metafields.custom.description_2 | metafield_tag }}",
+            "link_text": "",
+            "link_url": "",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#1a1a1a",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_mJHne8"
+      ],
+      "settings": {
+        "full_width": false,
+        "spacing": "medium"
+      }
+    },
+    "media_with_text_LaQp6n": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_JpR6bH": {
+          "type": "image",
+          "settings": {
+            "image": "{{ product.metafields.custom.image_3.value }}",
+            "media_width": 50,
+            "media_position": "end",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "",
+            "title": "",
+            "content": "{{ product.metafields.custom.description_3 | metafield_tag }}",
+            "link_text": "",
+            "link_url": "",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#1a1a1a",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_JpR6bH"
+      ],
+      "settings": {
+        "full_width": false,
+        "spacing": "medium"
+      }
+    },
+    "media_with_text_bRwz44": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_znBpX4": {
+          "type": "image",
+          "settings": {
+            "image": "{{ product.metafields.custom.image_4.value }}",
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "",
+            "title": "",
+            "content": "{{ product.metafields.custom.description_4 | metafield_tag }}",
+            "link_text": "",
+            "link_url": "",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#1a1a1a",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_znBpX4"
+      ],
+      "settings": {
+        "full_width": false,
+        "spacing": "medium"
+      }
+    },
+    "media_with_text_4aHzpJ": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_YNcm8x": {
+          "type": "image",
+          "settings": {
+            "image": "{{ product.metafields.custom.image_5.value }}",
+            "media_width": 50,
+            "media_position": "end",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "",
+            "title": "",
+            "content": "{{ product.metafields.custom.description_5 | metafield_tag }}",
+            "link_text": "",
+            "link_url": "",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#1a1a1a",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_YNcm8x"
+      ],
+      "settings": {
+        "full_width": false,
+        "spacing": "medium"
+      }
+    },
+    "1722936302c482a864": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_nTtrkk": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_nTtrkk"
+      ],
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "recommendations_count": 8,
+        "products": [],
+        "full_width": true,
+        "stack_products": false,
+        "show_progress_bar": false,
+        "products_per_row_mobile": "1",
+        "products_per_row_desktop": 4,
+        "subheading": "",
+        "title": "Vielleich mögen Sie auch:",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
+    }
+  },
+  "order": [
+    "17229604623a973d0d",
+    "main",
+    "text_with_icons_tpxtBj",
+    "feature_chart_custom_3kW4Qw",
+    "media_with_text_h6UN6K",
+    "media_with_text_3Uazxb",
+    "media_with_text_LaQp6n",
+    "media_with_text_bRwz44",
+    "media_with_text_4aHzpJ",
+    "1722936302c482a864",
+    "related-products"
+  ]
+}
